@@ -1,8 +1,8 @@
 package choi.adapter.adapter;
 
-import choi.adapter.service.port.SearchAdapter;
+import choi.adapter.service.port.SearchPort;
 
-public class DbSearchAdapter implements SearchAdapter {
+public class DbSearchAdapter implements SearchPort {
 
     @Override
     public String search(final String keyword) {

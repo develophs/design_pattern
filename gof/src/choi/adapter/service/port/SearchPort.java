@@ -1,5 +1,5 @@
 package choi.adapter.service.port;
 
-public interface SearchAdapter {
+public interface SearchPort {
     String search(String keyword);
 }

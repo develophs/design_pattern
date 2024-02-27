@@ -1,11 +1,10 @@
 package choi.adapter;
 
-import choi.adapter.adapter.DbSearchAdapter;
 import choi.adapter.adapter.WebSearchAdapter;
 import choi.adapter.controller.SearchController;
 import choi.adapter.controller.port.SearchService;
 import choi.adapter.service.SearchServiceImpl;
-import choi.adapter.service.port.SearchAdapter;
+import choi.adapter.service.port.SearchPort;
 
 /**
  * 클라이언트인 Service 클래스는 콘크리트 Adapter 클래스를 모른다.
@@ -20,9 +19,9 @@ public class AdapterMain {
 
     public static void main(String[] args) {
         //DI 조립
-        // SearchAdapter searchAdapter = new DbSearchAdapter();
-        SearchAdapter searchAdapter = new WebSearchAdapter();
-        SearchService searchService = new SearchServiceImpl(searchAdapter);
+        // SearchPort searchPort = new DbSearchAdapter();
+        SearchPort searchPort = new WebSearchAdapter();
+        SearchService searchService = new SearchServiceImpl(searchPort);
         SearchController searchController = new SearchController(searchService);
 
         String search = searchController.get("search");
